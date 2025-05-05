@@ -1,7 +1,10 @@
+### GET ALL USERS
 GET http://localhost:5000/users
 
-###
+### GET USER BY ID
+GET http://localhost:5000/users/289
 
+### POST USER
 POST http://localhost:5000/add-user 
 Content-Type: application/json
 
@@ -11,8 +14,7 @@ Content-Type: application/json
     "gender": "Male"
 }
 
-### 
-
+### EDIT USER
 PUT http://localhost:5000/edit-user/14
 Content-Type: application/json
 
@@ -22,6 +24,5 @@ Content-Type: application/json
     "gender": "Male"
 }
 
-###
-
-DELETE http://localhost:5000/delete-user/17
+### DELETE USER
+DELETE http://localhost:5000/delete-user/11

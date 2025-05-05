@@ -14,6 +14,8 @@
           <td>Metode</td>
           <td>Endpoint</td>
           <td>Deskripsi</td>
+          <td>Keterangan</td>
+          <td>Contoh Response</td>
         </tr>
       </thead>
       <tbody style="font-family: monospace">
@@ -21,26 +23,76 @@
           <td>GET</td>
           <td>/users</td>
           <td>Mengambil seluruh data dari tabel users.</td>
+          <td>-</td>
+          <td>
+            [ <br />
+            &nbsp; { <br />
+            &nbsp;&nbsp; "id": 1, <br />
+            &nbsp;&nbsp; "name": "rafli", <br />
+            &nbsp;&nbsp; "email": "rafli@gmail.com", <br />
+            &nbsp;&nbsp; "gender": "Male", <br />
+            &nbsp;&nbsp; "createdAt": "2025-04-29T13:17:17.000Z", <br />
+            &nbsp;&nbsp; "updatedAt": "2025-04-29T13:17:17.000Z" <br />
+            &nbsp; }, <br />
+            &nbsp; ... <br />
+            ]
+          </td>
         </tr>
         <tr>
           <td>GET</td>
           <td>/users/:id</td>
           <td>Mengambil data dari tabel users berdasarkan id.</td>
+          <td>-</td>
+          <td>
+            { <br />
+            &nbsp; "id": 1, <br />
+            &nbsp; "name": "rafli", <br />
+            &nbsp; "email": "rafli@gmail.com", <br />
+            &nbsp; "gender": "Male", <br />
+            &nbsp; "createdAt": "2025-04-29T13:17:17.000Z", <br />
+            &nbsp; "updatedAt": "2025-04-29T13:17:17.000Z" <br />
+            }
+          </td>
         </tr>
         <tr>
           <td>POST</td>
           <td>/add-user</td>
           <td>Menambahkan data baru ke tabel users.</td>
+          <td rowspan="2">
+            Content-type: application/json<br />
+            Contoh isi request body: <br />
+            { <br />
+            &nbsp; name: "awgnc" <br />
+            &nbsp; email: "awg@awg.inc" <br />
+            &nbsp; gender: "l" <br />
+            }
+          </td>
+          <td>
+            { <br />
+            &nbsp; "msg": "User Created" <br />
+            }
+          </td>
         </tr>
         <tr>
           <td>PUT</td>
           <td>/edit-user/:id</td>
           <td>Mengubah data dari tabel users berdasarkan id.</td>
+          <td>
+            { <br />
+            &nbsp; "msg": "User Updated" <br />
+            }
+          </td>
         </tr>
         <tr>
           <td>DELETE</td>
           <td>/delete-user/:id</td>
           <td>Menghapus data dari tabel users berdasarkan id.</td>
+          <td>-</td>
+          <td>
+            { <br />
+            &nbsp; "msg": "User Deleted" <br />
+            }
+          </td>
         </tr>
       </tbody>
     </table>
