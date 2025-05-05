@@ -37,7 +37,7 @@ async function updateUser(req, res) {
     await User.update(inputResult, {
       where: { id: req.params.id },
     });
-    res.status(201).json({ msg: "User Updated" });
+    res.status(200).json({ msg: "User Updated" });
   } catch (error) {
     console.log(error.message);
   }
@@ -46,7 +46,7 @@ async function updateUser(req, res) {
 async function deleteUser(req, res) {
   try {
     await User.destroy({ where: { id: req.params.id } });
-    res.status(201).json({ msg: "User Deleted" });
+    res.status(200).json({ msg: "User Deleted" });
   } catch (error) {
     console.log(error.message);
   }
