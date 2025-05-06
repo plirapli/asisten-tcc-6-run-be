@@ -42,8 +42,16 @@ async function getUserById(req, res) {
 // CREATE
 async function createUser(req, res) {
   try {
-    const inputResult = req.body;
-    await User.create(inputResult);
+    const { name, email, gender } = req.body;
+    if (!name || !email || !gender) {
+      const msg = `${
+        !name ? "Name" : !email ? "Email" : "Gender"
+      } field cannot be empty 😠`;
+      const error = new Error(msg);
+      error.statusCode = 401;
+      throw error;
+    }
+    await User.create(req.body);
     res.status(201).json({
       status: "Success",
       message: "User Created",
@@ -58,17 +66,28 @@ async function createUser(req, res) {
 
 async function updateUser(req, res) {
   try {
+    const { name, email, gender } = req.body;
     const ifUserExist = await User.findOne({ where: { id: req.params.id } });
+
+    if (!name || !email || !gender) {
+      const msg = `${
+        !name ? "Name" : !email ? "Email" : "Gender"
+      } field cannot be empty 😠`;
+      const error = new Error(msg);
+      error.statusCode = 401;
+      throw error;
+    }
+
     if (!ifUserExist) {
       const error = new Error("User tidak ditemukan 😮");
       error.statusCode = 400;
       throw error;
     }
 
-    const inputResult = req.body;
-    await User.update(inputResult, {
+    await User.update(req.body, {
       where: { id: req.params.id },
     });
+
     res.status(200).json({
       status: "Success",
       message: "User Updated",
