@@ -2,10 +2,10 @@
 GET http://localhost:5000/users
 
 ### GET USER BY ID
-GET http://localhost:5000/users/289
+GET http://localhost:5000/users/1
 
 ### POST USER
-POST http://localhost:5000/add-user 
+POST http://localhost:5000/users 
 Content-Type: application/json
 
 {
@@ -15,7 +15,7 @@ Content-Type: application/json
 }
 
 ### EDIT USER
-PUT http://localhost:5000/edit-user/14
+PUT http://localhost:5000/users/14
 Content-Type: application/json
 
 {
@@ -25,4 +25,4 @@ Content-Type: application/json
 }
 
 ### DELETE USER
-DELETE http://localhost:5000/delete-user/11
+DELETE http://localhost:5000/users/891

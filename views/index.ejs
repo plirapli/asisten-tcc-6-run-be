@@ -6,7 +6,7 @@
     <title>Document</title>
   </head>
   <body>
-    <h3>Selamat datang di Praktikum TCC pertemuan 5</h3>
+    <h3>API TCC Pertemuan 5</h3>
     <div>Daftar Endpoint API:</div>
     <table border="1">
       <thead>
@@ -14,7 +14,7 @@
           <td>Metode</td>
           <td>Endpoint</td>
           <td>Deskripsi</td>
-          <td>Keterangan</td>
+          <td>Request Body</td>
           <td>Contoh Response</td>
         </tr>
       </thead>
@@ -25,17 +25,21 @@
           <td>Mengambil seluruh data dari tabel users.</td>
           <td>-</td>
           <td>
-            [ <br />
-            &nbsp; { <br />
-            &nbsp;&nbsp; "id": 1, <br />
-            &nbsp;&nbsp; "name": "rafli", <br />
-            &nbsp;&nbsp; "email": "rafli@gmail.com", <br />
-            &nbsp;&nbsp; "gender": "Male", <br />
-            &nbsp;&nbsp; "createdAt": "2025-04-29T13:17:17.000Z", <br />
-            &nbsp;&nbsp; "updatedAt": "2025-04-29T13:17:17.000Z" <br />
-            &nbsp; }, <br />
-            &nbsp; ... <br />
-            ]
+            { <br />
+            &nbsp; status: "Success", <br />
+            &nbsp; message: "Users Retrieved", <br />
+            &nbsp; data: [ <br />
+            &nbsp;&nbsp; { <br />
+            &nbsp;&nbsp;&nbsp; "id": 1, <br />
+            &nbsp;&nbsp;&nbsp; "name": "rafli", <br />
+            &nbsp;&nbsp;&nbsp; "email": "rafli@gmail.com", <br />
+            &nbsp;&nbsp;&nbsp; "gender": "Male", <br />
+            &nbsp;&nbsp;&nbsp; "createdAt": "2025-04-29T13:17:17.000Z", <br />
+            &nbsp;&nbsp;&nbsp; "updatedAt": "2025-04-29T13:17:17.000Z" <br />
+            &nbsp;&nbsp; }, <br />
+            &nbsp;&nbsp; ... <br />
+            &nbsp; ] <br />
+            }
           </td>
         </tr>
         <tr>
@@ -45,18 +49,22 @@
           <td>-</td>
           <td>
             { <br />
-            &nbsp; "id": 1, <br />
-            &nbsp; "name": "rafli", <br />
-            &nbsp; "email": "rafli@gmail.com", <br />
-            &nbsp; "gender": "Male", <br />
-            &nbsp; "createdAt": "2025-04-29T13:17:17.000Z", <br />
-            &nbsp; "updatedAt": "2025-04-29T13:17:17.000Z" <br />
+            &nbsp; status: "Success", <br />
+            &nbsp; message: "Users Retrieved", <br />
+            &nbsp; data: { <br />
+            &nbsp;&nbsp; "id": 1, <br />
+            &nbsp;&nbsp; "name": "rafli", <br />
+            &nbsp;&nbsp; "email": "rafli@gmail.com", <br />
+            &nbsp;&nbsp; "gender": "Male", <br />
+            &nbsp;&nbsp; "createdAt": "2025-04-29T13:17:17.000Z", <br />
+            &nbsp;&nbsp; "updatedAt": "2025-04-29T13:17:17.000Z" <br />
+            &nbsp; } <br />
             }
           </td>
         </tr>
         <tr>
           <td>POST</td>
-          <td>/add-user</td>
+          <td>/users</td>
           <td>Menambahkan data baru ke tabel users.</td>
           <td rowspan="2">
             Content-type: application/json<br />
@@ -69,28 +77,31 @@
           </td>
           <td>
             { <br />
-            &nbsp; "msg": "User Created" <br />
+            &nbsp; status: "Success", <br />
+            &nbsp; message: "Users Created" <br />
             }
           </td>
         </tr>
         <tr>
           <td>PUT</td>
-          <td>/edit-user/:id</td>
+          <td>/users/:id</td>
           <td>Mengubah data dari tabel users berdasarkan id.</td>
           <td>
             { <br />
-            &nbsp; "msg": "User Updated" <br />
+            &nbsp; status: "Success", <br />
+            &nbsp; message: "Users Updated" <br />
             }
           </td>
         </tr>
         <tr>
           <td>DELETE</td>
-          <td>/delete-user/:id</td>
+          <td>/users/:id</td>
           <td>Menghapus data dari tabel users berdasarkan id.</td>
           <td>-</td>
           <td>
             { <br />
-            &nbsp; "msg": "User Deleted" <br />
+            &nbsp; status: "Success", <br />
+            &nbsp; message: "Users Deleted" <br />
             }
           </td>
         </tr>
