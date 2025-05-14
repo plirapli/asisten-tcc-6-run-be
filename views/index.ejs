@@ -70,8 +70,8 @@
             Content-type: application/json<br />
             Contoh isi request body: <br />
             { <br />
-            &nbsp; "name": "awgnc" <br />
-            &nbsp; "email": "awg@awg.inc" <br />
+            &nbsp; "name": "awgnc", <br />
+            &nbsp; "email": "awg@awg.inc", <br />
             &nbsp; "gender": "Male" <br />
             }
           </td>
@@ -79,6 +79,14 @@
             { <br />
             &nbsp; "status": "Success", <br />
             &nbsp; "message": "Users Created" <br />
+            &nbsp; "data": { <br />
+            &nbsp;&nbsp; "id": 1, <br />
+            &nbsp;&nbsp; "name": "awgnc", <br />
+            &nbsp;&nbsp; "email": "awg@awg.inc", <br />
+            &nbsp;&nbsp; "gender": "Male", <br />
+            &nbsp;&nbsp; "createdAt": "2025-04-29T13:17:17.000Z", <br />
+            &nbsp;&nbsp; "updatedAt": "2025-04-29T13:17:17.000Z" <br />
+            &nbsp; } <br />
             }
           </td>
         </tr>

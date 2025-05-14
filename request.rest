@@ -1,5 +1,5 @@
 ### GET ALL USERS
-GET http://localhost:5000/users
+GET https://be-rest-872136705893.us-central1.run.app/users
 
 ### GET USER BY ID
 GET http://localhost:5000/users/1
@@ -15,7 +15,7 @@ Content-Type: application/json
 }
 
 ### EDIT USER
-PUT http://localhost:5000/users/14
+PUT https://be-rest-872136705893.us-central1.run.app/users/916
 Content-Type: application/json
 
 {
@@ -25,4 +25,4 @@ Content-Type: application/json
 }
 
 ### DELETE USER
-DELETE http://localhost:5000/users/891
+DELETE https://be-rest-872136705893.us-central1.run.app/users/916
