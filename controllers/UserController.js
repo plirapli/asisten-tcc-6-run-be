@@ -55,12 +55,9 @@ async function getUserById(req, res) {
 // CREATE USER
 async function createUser(req, res) {
   try {
-    // Mengambil name, email, gender dari request body
-    const { name, email, gender } = req.body;
-
     // Ngecek apakah request body lengkap apa engga
     // Kalo kurang lengkap, masuk ke catch degnan error message "Field cannot be empty 😠" (400)
-    if (Object.keys(req.body).length < 4) {
+    if (Object.keys(req.body).length < 3) {
       const error = new Error("Field cannot be empty 😠");
       error.statusCode = 400;
       throw error;
@@ -97,7 +94,7 @@ async function updateUser(req, res) {
     const { name, email, gender } = req.body;
 
     // Ngecek apakah request body lengkap apa engga
-    if (Object.keys(req.body).length < 4) {
+    if (Object.keys(req.body).length < 3) {
       const error = new Error("Field cannot be empty 😠");
       error.statusCode = 400;
       throw error;
